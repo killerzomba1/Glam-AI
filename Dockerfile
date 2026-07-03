@@ -36,5 +36,8 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 # Expose port
 EXPOSE 3000
 
+RUN chown -R 1000:1000 /app
+USER 1000
+
 # Run production server
 CMD ["serve", "-s", "build", "-l", "3000"]
