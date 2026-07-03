@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import AppLayout from '@/components/layout/AppLayout';
 import HomePage from '@/pages/home/HomePage';
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="*"         element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
+        <Analytics />
       </BrowserRouter>
     </LanguageProvider>
   );
