@@ -156,7 +156,7 @@ export async function fetchTrendingCategory({ categoryLabel, query }) {
 }
 
 // ─── Products page ─────────────────────────────────────────────────────────────
-export async function fetchProducts({ category = 'All', search = '' }) {
+export async function fetchProducts({ category = 'All' }) {
   return LLM(
     `List 8 real, currently available beauty products${category !== 'All' ? ` in the category: ${category}` : ''}${search ? ` matching: "${search}"` : ''}. Include brand, product name, price range, shade options, skin type suitability, and a one-line benefit.`,
     {
